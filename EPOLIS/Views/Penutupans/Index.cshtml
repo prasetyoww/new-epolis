@@ -1,0 +1,120 @@
+﻿@model IEnumerable<EPOLIS.Models.Penutupan>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ADMINID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TGLINPUT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TGLOTORISASI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.STATUS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAMA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOSKK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TGLSKK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOPK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBROKER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISUPDATEPENUTUPANRENEWAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATEBY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATEDATE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JENISPENUTUPAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOREGPENUTUPAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADMINID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TGLINPUT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TGLOTORISASI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAMA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOSKK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TGLSKK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOPK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBROKER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISUPDATEPENUTUPANRENEWAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATEBY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATEDATE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

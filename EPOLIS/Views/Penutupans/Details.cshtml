@@ -1,0 +1,109 @@
+﻿@model EPOLIS.Models.Penutupan
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Penutupan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JENISPENUTUPAN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOREGPENUTUPAN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ADMINID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ADMINID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TGLINPUT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TGLINPUT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TGLOTORISASI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TGLOTORISASI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NAMA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NAMA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOSKK)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOSKK)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TGLSKK)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TGLSKK)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOPK)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOPK)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CIF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CIF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISBROKER)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISBROKER)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ISUPDATEPENUTUPANRENEWAL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ISUPDATEPENUTUPANRENEWAL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATEBY)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATEBY)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATEDATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATEDATE)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
