@@ -5,116 +5,270 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a class="btn btn-outline-primary" onclick="clearScreen()">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ADMINID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TGLINPUT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TGLOTORISASI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.STATUS)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NAMA)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOSKK)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TGLSKK)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOPK)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CIF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ISBROKER)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ISUPDATEPENUTUPANRENEWAL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UPDATEBY)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UPDATEDATE)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.JENISPENUTUPAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOREGPENUTUPAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ADMINID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TGLINPUT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TGLOTORISASI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.STATUS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NAMA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOSKK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TGLSKK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOPK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CIF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBROKER)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISUPDATEPENUTUPANRENEWAL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UPDATEBY)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UPDATEDATE)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table id="dt-penutupan" class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADMINID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TGLINPUT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TGLOTORISASI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.STATUS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NAMA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOSKK)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TGLSKK)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOPK)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CIF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISBROKER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISUPDATEPENUTUPANRENEWAL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UPDATEBY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UPDATEDATE)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<div id="modal-penutupan" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Form Penutupan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div>
+                        <label hidden>Id</label>
+                        <input id="Id" name="Id" class="form-control" type="text" hidden />
+                        <label>Jenis Penutupan</label><a style="color:red">*</a>
+                        <input id="JenisPenutupan" class="form-control" name="JenisPenutupan" type="text" placeholder="Jenis Penutupan" required />
+                        <label>Tanggal Input</label>
+                        <input id="TanggalInput" class="form-control" name="TanggalInput" type="date" required />
+                        
+                        @*isi yang lainnya, penulisan mengikuti contoh*@
+                    </div>
+                    <hr />
+                    <div>
+                        <button type="button" onclick="onSubmit()" class="btn btn-outline-success">Simpan Perubahan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+<link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/lib/sweetalert2/sweetalert2@10.js"></script>
+
+<script>
+    let table = null;
+    $(document).ready(function () {
+        table = $("#dt-penutupan").DataTable({
+            "ajax": {
+                "url": "/Penutupans/LoadData",
+                "dataType": "JSON",
+                "dataSrc": ""
+            },
+            "columnDefs": [
+                {
+                    "targets": [16], // kolom terakhir untuk di disable order nya (menyesuaikan dengan jumlah table)
+                    "orderable": false
+                }],
+            "columns": [
+                { "data": "id", "name": "id", "autoWidth": true },
+                { "data": "adminid", "name": "adminid", "autoWidth": true },
+                { "data": "jenispenutupan", "name": "jenispenutupan", "autoWidth": true },
+                { "data": "noregpenutupan", "name": "noregpenutupan", "autoWidth": true },
+                { "data": "tglinput", "name": "tglinput", "autoWidth": true },
+                { "data": "tglotorisasi", "name": "tglotorisasi", "autoWidth": true },
+                { "data": "status", "name": "status", "autoWidth": true },
+                { "data": "nama", "name": "nama", "autoWidth": true },
+                { "data": "noskk", "name": "noskk", "autoWidth": true },
+                { "data": "tglskk", "name": "tglskk", "autoWidth": true },
+                { "data": "nopk", "name": "nopk", "autoWidth": true },
+                { "data": "cif", "name": "cif", "autoWidth": true },
+                { "data": "isbroker", "name": "isbroker", "autoWidth": true },
+                { "data": "isupdatepenutupanrenewal", "name": "isupdatepenutupanrenewal", "autoWidth": true },
+                { "data": "updateby", "name": "updateby", "autoWidth": true },
+                { "data": "updatedate", "name": "updatedate", "autoWidth": true },
+                {
+                    "render": (data, type, full, meta) => {
+                        return '<a class="btn btn-info" href="#" onClick="Get(' + full.id + ')">Edit</a> <a class="btn btn-danger" href="#" onClick="Delete(' + full.id + ')">Delete</a>';
+                    }
+                },
+            ]
+        })
+    })
+
+    let onSubmit = () => {
+        if ($("#Id").val() == "") {
+            Post();
+        }
+        else {
+            Put();
+        }
+    }
+
+    let Post = () => {
+        const data = {
+            JENISPENUTUPAN: $("#JenisPenutupan").val()
+            // ambil dari model dan id pada html
+            // isi yang lainnya, penulisan mengikuti contoh
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Penutupans/Post/",
+            data: data,
+        }).then((resolve) => {
+            if (resolve != null) {
+                Swal.fire(
+                  'Success!',
+                  'Data Has Been Saved',
+                  'success'
+                )
+            }
+            $("#modal-penutupan").modal('hide');
+            table.ajax.reload();
+        }).catch((error) => {
+            Swal.fire(
+                'Error!',
+                'Something went wrong',
+                'error'
+            )         
+        })
+    }
+
+    let Put = () => {
+        const data = {
+            Id: $("#Id").val(),
+            JENISPENUTUPAN: $("#JenisPenutupan").val()
+            // ambil dari model dan id pada html
+            // isi yang lainnya, penulisan mengikuti contoh
+        };
+
+        $.ajax({
+            type: "PUT",
+            url: "/Penutupans/Put/",
+            data: data
+        }).then((resolve) => {
+            if (resolve != null) {
+                Swal.fire(
+                  'Success!',
+                  'Data Has Been Saved',
+                  'success'
+                )
+            }
+            $("#modal-penutupan").modal('hide');
+            table.ajax.reload();
+        }).catch((error) => {
+            Swal.fire(
+                'Error!',
+                'Something went wrong',
+                'error'
+            )   
+        })
+    }
+
+    let Get = (id) => {
+        $.ajax({
+            type: "GET",
+            url: "/Penutupans/Get/",
+            dataType: "JSON",
+            data: { id: id }
+        }).then((resolve) => {
+            if (resolve != null) {
+                $("#modal-penutupan").modal('show');
+
+                $("#Id").val(resolve.id);
+                $("#JenisPenutupan").val(resolve.jenispenutupan);
+                // ambil dari html dan ambil dari model (tulisan kecil semua)
+                // isi yang lainnya, penulisan mengikuti contoh
+            }
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
+    let Delete = (id) => {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+              $.ajax({
+                  type: "DELETE",
+                  url: "/Penutupans/Delete/",
+                  data: { id: id }
+              }).then((resolve) => {
+                  if (resolve != null) {
+                    Swal.fire(
+                      'Deleted!',
+                      'Your file has been deleted.',
+                      'success'
+                    )
+                  }
+                  table.ajax.reload();
+              }).catch((error) => {
+                  console.log(error);
+              })
+          }
+        })
+    }
+
+    let clearScreen = () => {
+        $("#Id").val("");
+        $("#JenisPenutupan").val("");
+        // ambil dari html
+        // isi yang lainnya, penulisan mengikuti contoh
+
+        $("#modal-penutupan").modal('show');
+    }
+</script>
