@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using EPOLIS.Context;
 using EPOLIS.Models;
 using EPOLIS.Repositories.Data;
+using System.Web.Http.Results;
 
 namespace EPOLIS.Controllers
 {
     public class PenutupansController : Controller
     {
-        private readonly MyContext _context;
         private readonly PenutupanRepository _penutupanRepository;
 
         public PenutupansController(PenutupanRepository penutupanRepository)
@@ -24,132 +24,52 @@ namespace EPOLIS.Controllers
         // GET: Penutupans
         public async Task<ActionResult<Penutupan>> Index()
         {
-            return View(await _penutupanRepository.Get());
+            return View(await LoadData());
         }
 
-        // GET: Penutupans/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<List<Penutupan>> LoadData()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var penutupan = await _context.Penutupans
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (penutupan == null)
-            {
-                return NotFound();
-            }
-
-            return View(penutupan);
+            var result = await _penutupanRepository.Get();
+            return result;
         }
 
-        // GET: Penutupans/Create
-        public IActionResult Create()
+        public async Task<ActionResult<Penutupan>> Get(int id)
         {
-            return View();
+            var result = await _penutupanRepository.Get(id);
+            return result;
         }
 
-        // POST: Penutupans/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JENISPENUTUPAN,NOREGPENUTUPAN,ADMINID,TGLINPUT,TGLOTORISASI,STATUS,NAMA,NOSKK,TGLSKK,NOPK,CIF,ISBROKER,ISUPDATEPENUTUPANRENEWAL,UPDATEBY,UPDATEDATE,Id")] Penutupan penutupan)
+        public async Task<ActionResult<Penutupan>> Post(Penutupan penutupan)
         {
-            if (ModelState.IsValid)
+            var result = await _penutupanRepository.Post(penutupan);
+            if (!result.Equals(0))
             {
-                _context.Add(penutupan);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Ok(result);
             }
-            return View(penutupan);
+            return BadRequest(result);
         }
 
-        // GET: Penutupans/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [HttpPut]
+        public async Task<ActionResult<Penutupan>> Put(Penutupan penutupan)
         {
-            if (id == null)
+            var result = await _penutupanRepository.Put(penutupan);
+            if (!result.Equals(0))
             {
-                return NotFound();
+                return Ok(result);
             }
-
-            var penutupan = await _context.Penutupans.FindAsync(id);
-            if (penutupan == null)
-            {
-                return NotFound();
-            }
-            return View(penutupan);
+            return BadRequest(result);
         }
 
-        // POST: Penutupans/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JENISPENUTUPAN,NOREGPENUTUPAN,ADMINID,TGLINPUT,TGLOTORISASI,STATUS,NAMA,NOSKK,TGLSKK,NOPK,CIF,ISBROKER,ISUPDATEPENUTUPANRENEWAL,UPDATEBY,UPDATEDATE,Id")] Penutupan penutupan)
+        [HttpDelete]
+        public async Task<ActionResult<Penutupan>> Delete(int id)
         {
-            if (id != penutupan.Id)
+            var result = await _penutupanRepository.Delete(id);
+            if (!result.Equals(0))
             {
-                return NotFound();
+                return Ok(result);
             }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(penutupan);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PenutupanExists(penutupan.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(penutupan);
-        }
-
-        // GET: Penutupans/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var penutupan = await _context.Penutupans
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (penutupan == null)
-            {
-                return NotFound();
-            }
-
-            return View(penutupan);
-        }
-
-        // POST: Penutupans/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var penutupan = await _context.Penutupans.FindAsync(id);
-            _context.Penutupans.Remove(penutupan);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool PenutupanExists(int id)
-        {
-            return _context.Penutupans.Any(e => e.Id == id);
+            return BadRequest(result);
         }
     }
 }
