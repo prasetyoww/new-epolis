@@ -1,0 +1,120 @@
+﻿@model EPOLIS.Models.FormPenutupan
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>FormPenutupan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JENISPENUTUPAN" class="control-label"></label>
+                <input asp-for="JENISPENUTUPAN" class="form-control" />
+                <span asp-validation-for="JENISPENUTUPAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOREGPENUTUPAN" class="control-label"></label>
+                <input asp-for="NOREGPENUTUPAN" class="form-control" />
+                <span asp-validation-for="NOREGPENUTUPAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOFASILITAS" class="control-label"></label>
+                <input asp-for="NOFASILITAS" class="form-control" />
+                <span asp-validation-for="NOFASILITAS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOREKENING" class="control-label"></label>
+                <input asp-for="NOREKENING" class="form-control" />
+                <span asp-validation-for="NOREKENING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NONASABAH" class="control-label"></label>
+                <input asp-for="NONASABAH" class="form-control" />
+                <span asp-validation-for="NONASABAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="STATUS" class="control-label"></label>
+                <input asp-for="STATUS" class="form-control" />
+                <span asp-validation-for="STATUS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NAMA" class="control-label"></label>
+                <input asp-for="NAMA" class="form-control" />
+                <span asp-validation-for="NAMA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOSKK" class="control-label"></label>
+                <input asp-for="NOSKK" class="form-control" />
+                <span asp-validation-for="NOSKK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ALAMATNASABAH" class="control-label"></label>
+                <input asp-for="ALAMATNASABAH" class="form-control" />
+                <span asp-validation-for="ALAMATNASABAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TELPRUMAH" class="control-label"></label>
+                <input asp-for="TELPRUMAH" class="form-control" />
+                <span asp-validation-for="TELPRUMAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PEKERJAAN" class="control-label"></label>
+                <input asp-for="PEKERJAAN" class="form-control" />
+                <span asp-validation-for="PEKERJAAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOHP" class="control-label"></label>
+                <input asp-for="NOHP" class="form-control" />
+                <span asp-validation-for="NOHP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOFAX" class="control-label"></label>
+                <input asp-for="NOFAX" class="form-control" />
+                <span asp-validation-for="NOFAX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EMAIL" class="control-label"></label>
+                <input asp-for="EMAIL" class="form-control" />
+                <span asp-validation-for="EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATEDATE" class="control-label"></label>
+                <input asp-for="UPDATEDATE" class="form-control" />
+                <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SEGMENTASI" class="control-label"></label>
+                <input asp-for="SEGMENTASI" class="form-control" />
+                <span asp-validation-for="SEGMENTASI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JENISASURANSI" class="control-label"></label>
+                <input asp-for="JENISASURANSI" class="form-control" />
+                <span asp-validation-for="JENISASURANSI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OKUPASI" class="control-label"></label>
+                <input asp-for="OKUPASI" class="form-control" />
+                <span asp-validation-for="OKUPASI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
