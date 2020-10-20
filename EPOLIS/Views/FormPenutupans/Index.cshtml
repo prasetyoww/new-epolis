@@ -1,138 +1,108 @@
-﻿@model IEnumerable<EPOLIS.Models.FormPenutupan>
+﻿@model EPOLIS.Models.FormPenutupan
 
 @{
-    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOFASILITAS)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOREKENING)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NONASABAH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.STATUS)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NAMA)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOSKK)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ALAMATNASABAH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TELPRUMAH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PEKERJAAN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOHP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOFAX)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EMAIL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UPDATEDATE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SEGMENTASI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JENISASURANSI)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OKUPASI)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.JENISPENUTUPAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOREGPENUTUPAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOFASILITAS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOREKENING)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NONASABAH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.STATUS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NAMA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOSKK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ALAMATNASABAH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TELPRUMAH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PEKERJAAN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOHP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOFAX)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EMAIL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UPDATEDATE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SEGMENTASI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JENISASURANSI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OKUPASI)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<h4>FormPenutupan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JENISPENUTUPAN" class="control-label"></label>
+                <input asp-for="JENISPENUTUPAN" class="form-control" />
+                <span asp-validation-for="JENISPENUTUPAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOREGPENUTUPAN" class="control-label"></label>
+                <input asp-for="NOREGPENUTUPAN" class="form-control" />
+                <span asp-validation-for="NOREGPENUTUPAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOFASILITAS" class="control-label"></label>
+                <input asp-for="NOFASILITAS" class="form-control" />
+                <span asp-validation-for="NOFASILITAS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOREKENING" class="control-label"></label>
+                <input asp-for="NOREKENING" class="form-control" />
+                <span asp-validation-for="NOREKENING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NONASABAH" class="control-label"></label>
+                <input asp-for="NONASABAH" class="form-control" />
+                <span asp-validation-for="NONASABAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="STATUS" class="control-label"></label>
+                <input asp-for="STATUS" class="form-control" />
+                <span asp-validation-for="STATUS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NAMA" class="control-label"></label>
+                <input asp-for="NAMA" class="form-control" />
+                <span asp-validation-for="NAMA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOSKK" class="control-label"></label>
+                <input asp-for="NOSKK" class="form-control" />
+                <span asp-validation-for="NOSKK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ALAMATNASABAH" class="control-label"></label>
+                <input asp-for="ALAMATNASABAH" class="form-control" />
+                <span asp-validation-for="ALAMATNASABAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TELPRUMAH" class="control-label"></label>
+                <input asp-for="TELPRUMAH" class="form-control" />
+                <span asp-validation-for="TELPRUMAH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PEKERJAAN" class="control-label"></label>
+                <input asp-for="PEKERJAAN" class="form-control" />
+                <span asp-validation-for="PEKERJAAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOHP" class="control-label"></label>
+                <input asp-for="NOHP" class="form-control" />
+                <span asp-validation-for="NOHP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOFAX" class="control-label"></label>
+                <input asp-for="NOFAX" class="form-control" />
+                <span asp-validation-for="NOFAX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EMAIL" class="control-label"></label>
+                <input asp-for="EMAIL" class="form-control" />
+                <span asp-validation-for="EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATEDATE" class="control-label"></label>
+                <input asp-for="UPDATEDATE" class="form-control" />
+                <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SEGMENTASI" class="control-label"></label>
+                <input asp-for="SEGMENTASI" class="form-control" />
+                <span asp-validation-for="SEGMENTASI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JENISASURANSI" class="control-label"></label>
+                <input asp-for="JENISASURANSI" class="form-control" />
+                <span asp-validation-for="JENISASURANSI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OKUPASI" class="control-label"></label>
+                <input asp-for="OKUPASI" class="form-control" />
+                <span asp-validation-for="OKUPASI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
