@@ -84,7 +84,23 @@
                         <input id="JenisPenutupan" class="form-control" name="JenisPenutupan" type="text" placeholder="Jenis Penutupan" required />
                         <label>Tanggal Input</label>
                         <input id="TanggalInput" class="form-control" name="TanggalInput" type="date" required />
-                        
+                        <label>No. Reg Penutupan</label>
+                        <input id="NoRegPenutupan" class="form-control" name="NoRegPenutupan" type="text" required />
+                        <label>Admin ID</label>
+                        <input id="AdminId" class="form-control" name="AdminId" type="text" required />
+                        <label>Tanggal Otorisasi</label>
+                        <input id="TanggalOtorisasi" class="form-control" name="TanggalOtorisasi" type="date" required /><br>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Status
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Approved</a>
+                                <a class="dropdown-item" href="#">Pending</a>
+                                <a class="dropdown-item" href="#">Rejected</a>
+                            </div>
+                        </div>
+
                         @*isi yang lainnya, penulisan mengikuti contoh*@
                     </div>
                     <hr />
@@ -155,6 +171,7 @@
     let Post = () => {
         const data = {
             JENISPENUTUPAN: $("#JenisPenutupan").val()
+            
             // ambil dari model dan id pada html
             // isi yang lainnya, penulisan mengikuti contoh
         };
@@ -221,9 +238,9 @@
         }).then((resolve) => {
             if (resolve != null) {
                 $("#modal-penutupan").modal('show');
-
                 $("#Id").val(resolve.id);
                 $("#JenisPenutupan").val(resolve.jenispenutupan);
+
                 // ambil dari html dan ambil dari model (tulisan kecil semua)
                 // isi yang lainnya, penulisan mengikuti contoh
             }
@@ -266,6 +283,7 @@
     let clearScreen = () => {
         $("#Id").val("");
         $("#JenisPenutupan").val("");
+
         // ambil dari html
         // isi yang lainnya, penulisan mengikuti contoh
 

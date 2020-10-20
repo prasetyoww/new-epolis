@@ -12,5 +12,7 @@ namespace EPOLIS.Context
         public MyContext(DbContextOptions<MyContext> options) : base(options) { }
 
         public DbSet<Penutupan> Penutupans { get; set; }
+
+        public DbSet<FormPenutupan> FormPenutupan { get; set; }
     }
 }

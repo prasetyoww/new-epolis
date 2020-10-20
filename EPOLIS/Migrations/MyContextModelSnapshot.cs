@@ -19,6 +19,73 @@ namespace EPOLIS.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("EPOLIS.Models.FormPenutupan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ALAMATNASABAH")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EMAIL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JENISASURANSI")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JENISPENUTUPAN")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NAMA")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NOFASILITAS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NOFAX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NOHP")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NONASABAH")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NOREGPENUTUPAN")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<DateTime>("NOREKENING")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NOSKK")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OKUPASI")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PEKERJAAN")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SEGMENTASI")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("STATUS")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TELPRUMAH")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UPDATEDATE")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FormPenutupan");
+                });
+
             modelBuilder.Entity("EPOLIS.Models.Penutupan", b =>
                 {
                     b.Property<int>("Id")
@@ -27,16 +94,13 @@ namespace EPOLIS.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ADMINID")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CIF")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ISBROKER")
-                        .HasColumnType("int")
-                        .HasMaxLength(20);
+                        .HasColumnType("int");
 
                     b.Property<int>("ISUPDATEPENUTUPANRENEWAL")
                         .HasColumnType("int");
@@ -45,24 +109,20 @@ namespace EPOLIS.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NAMA")
-                        .HasColumnType("nvarchar(40)")
-                        .HasMaxLength(40);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NOPK")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NOREGPENUTUPAN")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.Property<string>("NOSKK")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("STATUS")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TGLINPUT")
                         .HasColumnType("datetime2");
