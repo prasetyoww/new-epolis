@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\new-epolis\\EPOLIS\\EPOLIS.csproj": {}
+    "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\EPOLIS.csproj": {}
   },
   "projects": {
-    "E:\\Project\\new-epolis\\EPOLIS\\EPOLIS.csproj": {
+    "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\EPOLIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\new-epolis\\EPOLIS\\EPOLIS.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\EPOLIS.csproj",
         "projectName": "EPOLIS",
-        "projectPath": "E:\\Project\\new-epolis\\EPOLIS\\EPOLIS.csproj",
-        "packagesPath": "C:\\Users\\NaufalAj\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\new-epolis\\EPOLIS\\obj\\",
+        "projectPath": "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\EPOLIS.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\NaufalAj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
