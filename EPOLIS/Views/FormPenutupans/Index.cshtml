@@ -1,0 +1,138 @@
+﻿@model IEnumerable<EPOLIS.Models.FormPenutupan>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JENISPENUTUPAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOREGPENUTUPAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOFASILITAS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOREKENING)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NONASABAH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.STATUS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAMA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOSKK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ALAMATNASABAH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TELPRUMAH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PEKERJAAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOHP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOFAX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UPDATEDATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SEGMENTASI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JENISASURANSI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OKUPASI)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JENISPENUTUPAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOREGPENUTUPAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOFASILITAS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOREKENING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NONASABAH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAMA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOSKK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ALAMATNASABAH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELPRUMAH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PEKERJAAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOHP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOFAX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UPDATEDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEGMENTASI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JENISASURANSI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OKUPASI)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
