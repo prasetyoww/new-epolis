@@ -13,6 +13,21 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\template\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\template\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\template\fonts\ionicons.svg" />
+    <None Include="wwwroot\template\js\adminlte.min.js" />
+    <None Include="wwwroot\template\js\bootstrap.min.js" />
+    <None Include="wwwroot\template\js\bootstrap3-wysihtml5.all.min.js" />
+    <None Include="wwwroot\template\js\Chart.js" />
+    <None Include="wwwroot\template\js\ckeditor.js" />
+    <None Include="wwwroot\template\js\datatables.min.js" />
+    <None Include="wwwroot\template\js\demo.js" />
+    <None Include="wwwroot\template\js\fastclick.js" />
+    <None Include="wwwroot\template\js\IntegrationHelper.js" />
+    <None Include="wwwroot\template\js\jquery.min.js" />
+    <None Include="wwwroot\template\js\select2.min.js" />
+    <None Include="wwwroot\template\js\w2ui-1.5.rc1.min.js" />
   </ItemGroup>
 
   <ItemGroup>

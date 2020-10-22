@@ -171,7 +171,6 @@
     let Post = () => {
         const data = {
             JENISPENUTUPAN: $("#JenisPenutupan").val()
-            
             // ambil dari model dan id pada html
             // isi yang lainnya, penulisan mengikuti contoh
         };
@@ -182,8 +181,8 @@
         }).then((resolve) => {
             if (resolve != null) {
                 Swal.fire(
-                  'Success!',
-                  'Data Has Been Saved',
+                  'Berhasil!',
+                  'Data Berhasil Di SImpan',
                   'success'
                 )
             }
@@ -191,8 +190,8 @@
             table.ajax.reload();
         }).catch((error) => {
             Swal.fire(
-                'Error!',
-                'Something went wrong',
+                'Gagal!',
+                'Masukkan Data yang Benar',
                 'error'
             )         
         })
@@ -213,8 +212,8 @@
         }).then((resolve) => {
             if (resolve != null) {
                 Swal.fire(
-                  'Success!',
-                  'Data Has Been Saved',
+                  'Berhasil!',
+                  'Data Berhasil di Simpan',
                   'success'
                 )
             }
@@ -222,8 +221,8 @@
             table.ajax.reload();
         }).catch((error) => {
             Swal.fire(
-                'Error!',
-                'Something went wrong',
+                'Gagal!',
+                'Masukkan Data yang Benar',
                 'error'
             )   
         })
@@ -251,13 +250,13 @@
 
     let Delete = (id) => {
         Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
+          title: 'Apakah Kamu Yakin?',
+          text: "Kamu Tidak Dapat Mengembalikan nya lagi!",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
+          confirmButtonText: 'Ya, Hapus!'
         }).then((result) => {
           if (result.isConfirmed) {
               $.ajax({
@@ -267,8 +266,8 @@
               }).then((resolve) => {
                   if (resolve != null) {
                     Swal.fire(
-                      'Deleted!',
-                      'Your file has been deleted.',
+                      'Terhapus!',
+                      'Data Sudah Berhasil di Hapus',
                       'success'
                     )
                   }
