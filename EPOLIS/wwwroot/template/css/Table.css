@@ -1,0 +1,96 @@
+﻿/*table.dataTable > thead > tr:not(.filter-row) {
+    background: linear-gradient(#DCEAFD, #94B6E8 50%, #94B6E8 50%, #94B6E8);
+}*/
+/*table.dataTable > thead > tr:not(.filter-row) {
+    background: linear-gradient(#DCEAFD, #94B6E8 50%, #94B6E8 50%, #94B6E8);
+    background-attachment:fixed;
+}*/
+table.dataTable {
+    background: linear-gradient(#fb2c17, #d9534f 20px, #d9534f 20px, #e12424);
+    border-color: #b9b9b9;
+}
+
+    table.dataTable > thead > tr:first-child th {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /*th {
+            text-align: center;
+        }*/
+
+    table.dataTable, table.dataTable tr th, table.dataTable tr td {
+        /*border-color: #b9b9b9;*/
+        border-collapse: collapse !important;
+    }
+
+        table.dataTable tr.filter-row {
+            background-color: #eaeaea;
+        }
+
+        table.dataTable thead tr.filter-row th {
+            padding: 2px;
+        }
+
+            table.dataTable thead tr.filter-row th input {
+                height: 28px;
+                padding-left: 8px;
+                padding-right: 20px;
+            }
+
+        table.dataTable thead tr th.sorting_disabled {
+            padding-right: 5px;
+        }
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: white;
+}
+
+
+.btn-add-cell {
+    color: green;
+    text-align: center;
+}
+
+table span.glyphicon {
+    font-size: larger;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #398439; /*#78ACE9;*/
+}
+
+    table span.glyphicon.btn-add {
+        color: #d9534f; /*rgba(109, 16, 20, 0.77);*/ /*green;*/
+    }
+
+    table span.glyphicon.white {
+        color: white;
+    }
+
+    table span.glyphicon.disabled {
+        color: grey;
+        cursor: initial;
+    }
+
+    span.glyphicon.glyphicon-save.white {
+        color: white;
+    }
+
+ td.details-control {
+    background: url('../images/details_open.png') no-repeat center center;
+    cursor: pointer;
+            }
+tr.shown td.details-control {
+    background: url('../images/details_close.png') no-repeat center center;
+}
+
+td.details-grandcontrol {
+    background: url('../images/details_open.png') no-repeat center center;
+    cursor: pointer;
+            }
+tr.shown td.details-grandcontrol {
+    background: url('../images/details_close.png') no-repeat center center;
+}
+
+
+
