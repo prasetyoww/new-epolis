@@ -38,19 +38,18 @@ namespace EPOLIS.Models
         public string CIF { get; set; }
         //[Display(Name = "Tanggal SKK")]
         //[StringLength(50, MinimumLength = 1)]
-        public  ISBROKER { get; set; }
+        public int  ISBROKER { get; set; }
         //[Display(Name = "No. PK")]
         //[StringLength(20, MinimumLength = 1)]
-        public string PEKE { get; set; }
+        public int ISUPDATEPENUTUPANRENEWAL { get; set; }
         //[Display(Name = "CIF")]
         //[StringLength(20, MinimumLength = 1)]
-        public int NOHP { get; set; }
-        public int NOFAX { get; set; }
-        public string EMAIL { get; set; }
-        public DateTime UPDATEDATE { get; set; }
-        public int Id { get; set; }
-        public string SEGMENTASI { get; set; }
-        public string JENISASURANSI { get; set; }
-        public string OKUPASI { get; set; }
+        public int UPDATEBYID { get; set; }
+        public DateTime UPDATETIME { get; set; }
+        public int CREATEDBYID { get; set; }
+        public DateTime CREATEDTIME { get; set; }
+        public Boolean ISDELETED { get; set; }
+        public int DELETEDBYID { get; set; }
+        public DateTime DELETEDTIME { get; set; }
     }
 }
