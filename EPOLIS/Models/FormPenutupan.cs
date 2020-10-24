@@ -51,5 +51,6 @@ namespace EPOLIS.Models
         public Boolean ISDELETED { get; set; }
         public int DELETEDBYID { get; set; }
         public DateTime DELETEDTIME { get; set; }
+        public int Id { get; set; }
     }
 }
