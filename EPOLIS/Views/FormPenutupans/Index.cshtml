@@ -1,9 +1,12 @@
 ﻿@model EPOLIS.Models.FormPenutupan
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<h5 class="row">Melanjutkan Membuat Order Penutupan ?</h5>
+<div class="form-check form-check-inline">
+    <input type="radio" name="Ya" value="Ya" />Ya
+    <input type="radio" name="Pending" value="Pending" />Pending
+    <br />
 <h4 class="text-center">Form Penutupan</h4>
 <hr />
 <div class="row">
@@ -12,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="JENISPENUTUPAN" class="control-label"></label>
-                <input asp-for="JENISPENUTUPAN" class="form-control" value="Baru"/>
+                <input asp-for="JENISPENUTUPAN" class="form-control" value="Baru" />
                 <span asp-validation-for="JENISPENUTUPAN" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -85,7 +88,7 @@
                 <input asp-for="UPDATEDATE" class="form-control" />
                 <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
             </div>
-            <div class="form-group">               
+            <div class="form-group">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         SEGMENTASI PEMBIAYAAN
@@ -113,3 +116,8 @@
         </form>
     </div>
 </div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+<link href="~/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/lib/sweetalert2/sweetalert2@10.js"></script>
+

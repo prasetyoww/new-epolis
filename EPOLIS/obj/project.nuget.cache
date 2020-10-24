@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yqheHHZmIoSEMlNLXPx2DNZT2jtmn73hQhyTw/QbLPs+zTwyjFdDczoyDI7eqen0vTWvYeI0q420/QVNehzjIQ==",
+  "dgSpecHash": "7nye5X1M1pWqCCYI7Qc7oQpfg5p2+Wqnp+mBA6bFu9dSzemzZH3KVmtRb66VDjpgzQNbs2KykGiFkA7x80zi3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hp\\Documents\\new-epolis\\EPOLIS\\EPOLIS.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\Hp\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.4\\microsoft.visualstudio.web.codegenerators.mvc.3.1.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Hp\\.nuget\\packages\\moment.js\\2.29.1\\moment.js.2.29.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Hp\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
